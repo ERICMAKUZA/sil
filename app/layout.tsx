@@ -69,9 +69,26 @@ export default function RootLayout({
           }}
         />
 
-        {/* Meta Pixel */}
+        {/* Meta Pixel - stub loaded early so checkers can detect fbq */}
         <Script
-          id="meta-pixel"
+          id="meta-pixel-stub"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.fbq=window.fbq||function(){
+                (window._fbq=window._fbq||window.fbq).callMethod?
+                window.fbq.callMethod.apply(window.fbq,arguments):
+                (window.fbq.queue=window.fbq.queue||[]).push(arguments)
+              };
+              window.fbq.loaded=true;
+              window.fbq.version='2.0';
+              window.fbq.queue=[];
+            `,
+          }}
+        />
+        {/* Meta Pixel - load fbevents.js and fire PageView */}
+        <Script
+          id="meta-pixel-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
