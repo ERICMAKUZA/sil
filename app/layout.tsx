@@ -30,6 +30,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Meta Pixel — inline in <head> so any checker/scraper detects it immediately */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2098263407702149');
+fbq('track','PageView');`,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=2098263407702149&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
@@ -39,16 +65,16 @@ export default function RootLayout({
         >
           {/* Background Layers */}
           <SiteBackground />
-          
+
           {/* Global Spider Web Particle Animation */}
           <SpiderWebCanvas />
-          
+
           {/* Main Content - sits above background layers */}
           <div className="relative" style={{ zIndex: 2 }}>
             {children}
           </div>
         </ThemeProvider>
-        
+
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
@@ -68,53 +94,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* Meta Pixel - stub loaded early so checkers can detect fbq */}
-        <Script
-          id="meta-pixel-stub"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.fbq=window.fbq||function(){
-                (window._fbq=window._fbq||window.fbq).callMethod?
-                window.fbq.callMethod.apply(window.fbq,arguments):
-                (window.fbq.queue=window.fbq.queue||[]).push(arguments)
-              };
-              window.fbq.loaded=true;
-              window.fbq.version='2.0';
-              window.fbq.queue=[];
-            `,
-          }}
-        />
-        {/* Meta Pixel - load fbevents.js and fire PageView */}
-        <Script
-          id="meta-pixel-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '2098263407702149');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=2098263407702149&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
       </body>
     </html>
   )
