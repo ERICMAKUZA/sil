@@ -302,14 +302,7 @@ export function Footer() {
                   alt="Synaptix Innovation Labs"
                   width={200}
                   height={56}
-                  className="h-12 md:h-14 w-auto dark:hidden"
-                />
-                <Image
-                  src="/images/logo-dark.png"
-                  alt="Synaptix Innovation Labs"
-                  width={200}
-                  height={56}
-                  className="h-12 md:h-14 w-auto hidden dark:block"
+                  className="h-12 md:h-14 w-auto"
                 />
               </Link>
               <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">

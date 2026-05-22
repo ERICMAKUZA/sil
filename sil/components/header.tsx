@@ -63,15 +63,7 @@ export function Header() {
               alt="Synaptix Innovation Labs"
               width={180}
               height={50}
-              className="h-10 md:h-12 w-auto dark:hidden"
-              priority
-            />
-            <Image
-              src="/images/logo-dark.png"
-              alt="Synaptix Innovation Labs"
-              width={180}
-              height={50}
-              className="h-10 md:h-12 w-auto hidden dark:block"
+              className="h-10 md:h-12 w-auto"
               priority
             />
           </Link>
