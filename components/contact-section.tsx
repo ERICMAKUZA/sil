@@ -14,10 +14,17 @@ const contactMethods = [
     description: "Mon - Fri, 8am - 5pm CAT",
   },
   {
+    icon: Phone,
+    label: "Call or WhatsApp",
+    value: "+263 78 682 9884",
+    href: "https://wa.me/263786829884",
+    description: "Mon - Fri, 8am - 5pm CAT",
+  },
+  {
     icon: Mail,
     label: "Email Us",
-    value: "sales.administrator@synaptixinnovationlabs.co.zw",
-    href: "mailto:sales.administrator@synaptixinnovationlabs.co.zw",
+    value: "sales@synaptix.co.zw",
+    href: "mailto:sales@synaptix.co.zw",
     description: "We reply within 24 hours",
   },
   {
@@ -165,7 +172,7 @@ export function ContactSection() {
                     Chat on WhatsApp
                   </Button>
                 </Link>
-                <Link href="mailto:sales.administrator@synaptixinnovationlabs.co.zw">
+                <Link href="mailto:sales@synaptix.co.zw">
                   <Button variant="outline" className="rounded-full bg-transparent border-border text-foreground hover:bg-secondary px-6 py-5 text-sm">
                     <Mail className="mr-2 h-4 w-4" />
                     Send an Email

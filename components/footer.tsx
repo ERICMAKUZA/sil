@@ -112,7 +112,7 @@ function ContactForm() {
       `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${serviceName}\n\nMessage:\n${formData.message}`
     )
 
-    const mailtoLink = `mailto:sales.administrator@synaptixinnovationlabs.co.zw?subject=${subject}&body=${body}`
+    const mailtoLink = `mailto:sales@synaptix.co.zw?subject=${subject}&body=${body}`
     window.location.href = mailtoLink
   }
 
@@ -237,7 +237,22 @@ export function Footer() {
                 </Link>
 
                 <Link
-                  href="mailto:sales.administrator@synaptixinnovationlabs.co.zw"
+                  href="https://wa.me/263786829884"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="h-12 w-12 rounded-xl bg-accent/15 flex items-center justify-center group-hover:bg-accent/25 transition-colors">
+                    <Phone className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Call or WhatsApp</p>
+                    <p className="font-semibold text-foreground group-hover:text-accent transition-colors">+263 78 682 9884</p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="mailto:sales@synaptix.co.zw"
                   className="flex items-center gap-4 group"
                 >
                   <div className="h-12 w-12 rounded-xl bg-accent/15 flex items-center justify-center group-hover:bg-accent/25 transition-colors">
@@ -245,7 +260,7 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email Us</p>
-                    <p className="font-semibold text-foreground group-hover:text-accent transition-colors break-all">sales.administrator@synaptixinnovationlabs.co.zw</p>
+                    <p className="font-semibold text-foreground group-hover:text-accent transition-colors break-all">sales@synaptix.co.zw</p>
                   </div>
                 </Link>
 

@@ -457,7 +457,7 @@ export default function CustomSoftwareDevelopmentPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="mailto:sales.administrator@synaptixinnovationlabs.co.zw">
+              <Link href="mailto:sales@synaptix.co.zw">
                 <Button
                   size="lg"
                   variant="outline"

@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "How do I get started with Synaptix?",
-    answer: "Simply reach out via WhatsApp at +263 789 158 334 or email us at sales.administrator@synaptixinnovationlabs.co.zw. We'll discuss your goals, challenges, and ideas, then create a tailored proposal. No commitment required for the initial conversation.",
+    answer: "Simply reach out via WhatsApp at +263 789 158 334 or email us at sales@synaptix.co.zw. We'll discuss your goals, challenges, and ideas, then create a tailored proposal. No commitment required for the initial conversation.",
   },
 ]
 
