@@ -157,13 +157,13 @@ const ExecDashboard = () => {
   return (
     <div>
       <FilterBar filters={filterDefs} values={filters} onChange={setFilters} />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 20 }}>
+      <div className="rg-2" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 20 }}>
         <KPICard icon="👥" label="Total Active Clients" value="2,847" sub="Across all branches" trend={4.2} />
         <KPICard icon="💼" label="Portfolio Outstanding" value="K 6.09M" sub="ZMW equivalent" trend={8.1} color={COLORS.navy} />
         <KPICard icon="⚠️" label="PAR30 Ratio" value="7.24%" sub="Target: < 5%" trend={-1.3} color={COLORS.accent2} />
         <KPICard icon="📋" label="Active Loan Accounts" value="1,634" sub="300 status loans" trend={5.7} color={COLORS.accent3} />
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, marginBottom: 16 }}>
         <ChartCard title="Portfolio Growth Trend" height={280}>
           <ResponsiveContainer>
             <AreaChart data={portfolioTrend}>
@@ -193,7 +193,7 @@ const ExecDashboard = () => {
           </ResponsiveContainer>
         </ChartCard>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         <ChartCard title="Disbursements by Branch" height={240}>
           <ResponsiveContainer>
             <BarChart data={disbByBranch} layout="vertical" barSize={18}>
@@ -233,7 +233,7 @@ const PARDashboard = () => {
   return (
     <div>
       <FilterBar filters={filterDefs} values={filters} onChange={setFilters} />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 20 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 20 }}>
         <KPICard icon="⚠️" label="PAR30 Portfolio" value="K 441K" sub="Loans > 30 days overdue" color={COLORS.accent2} />
         <KPICard icon="🔴" label="PAR90 Portfolio" value="K 160K" sub="Loans > 90 days overdue" color={COLORS.par90} />
         <ChartCard title="PAR Aging Buckets" height={130}>
@@ -249,7 +249,7 @@ const PARDashboard = () => {
           </ResponsiveContainer>
         </ChartCard>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
         <ChartCard title="PAR Portfolio by Officer" height={280}>
           <ResponsiveContainer>
             <BarChart data={parByOfficer} barSize={20}>
@@ -303,7 +303,7 @@ const OfficerDashboard = () => {
   return (
     <div>
       <FilterBar filters={filterDefs} values={filters} onChange={setFilters} />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
         <ChartCard title="Portfolio by Loan Officer" height={280}>
           <ResponsiveContainer>
             <BarChart data={officerScorecard} barSize={28}>
@@ -335,7 +335,7 @@ const OfficerDashboard = () => {
           </ResponsiveContainer>
         </ChartCard>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "7fr 5fr", gap: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "7fr 5fr", gap: 16 }}>
         <ChartCard title="Loan Officer Scorecard" height={320}>
           <DataTable maxH={310} columns={[
             { key: "name", label: "Officer", bold: true },
@@ -379,7 +379,7 @@ const DisbDashboard = () => {
   return (
     <div>
       <FilterBar filters={filterDefs} values={filters} onChange={setFilters} />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 3fr", gap: 16, marginBottom: 16 }}>
         <KPICard icon="💰" label="Total Disbursed YTD" value={`K ${fmt(totalDisb)}`} sub="Year-to-date disbursements" trend={12.4} />
         <ChartCard title="Disbursements vs Collections Monthly" height={250}>
           <ResponsiveContainer>
@@ -395,7 +395,7 @@ const DisbDashboard = () => {
           </ResponsiveContainer>
         </ChartCard>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
         <ChartCard title="Monthly Disbursements" height={260}>
           <ResponsiveContainer>
             <BarChart data={disbCollMonthly} barSize={24}>
@@ -459,7 +459,7 @@ const ClientDashboard = () => {
   return (
     <div>
       <FilterBar filters={filterDefs} values={filters} onChange={setFilters} />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 3fr", gap: 16, marginBottom: 16 }}>
         <KPICard icon="👥" label="Total Active Clients" value="2,847" sub="Active status (300)" trend={6.8} color={COLORS.navy} />
         <ChartCard title="Client Growth by Month" height={250}>
           <ResponsiveContainer>
@@ -479,7 +479,7 @@ const ClientDashboard = () => {
           </ResponsiveContainer>
         </ChartCard>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="rg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 16 }}>
         <ChartCard title="Gender Distribution" height={240}>
           <ResponsiveContainer>
             <PieChart>
@@ -598,24 +598,24 @@ export function LiveDemoModal({ onClose }: { onClose: () => void }) {
         </button>
 
         {/* Suite header */}
-        <div style={{
+        <div className="demo-header" style={{
           background: `linear-gradient(135deg, ${COLORS.navyDark} 0%, ${COLORS.navy} 100%)`,
           padding: "14px 24px",
           display: "flex", alignItems: "center", justifyContent: "space-between",
           flexShrink: 0,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 7, background: COLORS.crimson, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 900, color: "#fff" }}>M</div>
+            <div style={{ width: 32, height: 32, borderRadius: 7, background: COLORS.crimson, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 900, color: "#fff" }}>📊</div>
             <div>
-              <div style={{ color: "#fff", fontSize: 15, fontWeight: 800 }}>MFI Reporting Suite</div>
-              <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 10, letterSpacing: 1.2, textTransform: "uppercase" }}>Fineract · Microfinance Intelligence · Live Demo</div>
+              <div style={{ color: "#fff", fontSize: 15, fontWeight: 800 }}>Financial Reporting Suite</div>
+              <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 10, letterSpacing: 1.2, textTransform: "uppercase" }}>Analytics Dashboard · Live Demo</div>
             </div>
           </div>
           <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11 }}>Last refreshed: {new Date().toLocaleDateString()}</div>
         </div>
 
         {/* Tabs */}
-        <div style={{ background: COLORS.card, borderBottom: `1px solid ${COLORS.border}`, padding: "0 20px", display: "flex", gap: 0, overflowX: "auto", flexShrink: 0 }}>
+        <div className="demo-tabs" style={{ background: COLORS.card, borderBottom: `1px solid ${COLORS.border}`, padding: "0 20px", display: "flex", gap: 0, overflowX: "auto", flexShrink: 0 }}>
           {TABS.map(t => (
             <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
               padding: "12px 18px", border: "none", background: "transparent", cursor: "pointer",
@@ -630,13 +630,13 @@ export function LiveDemoModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Scrollable content */}
-        <div style={{ flex: 1, overflowY: "auto", padding: "20px 24px", fontFamily: "Inter, system-ui, sans-serif" }}>
+        <div className="demo-content" style={{ flex: 1, overflowY: "auto", padding: "20px 24px", fontFamily: "Inter, system-ui, sans-serif" }}>
           <ActiveDashboard />
         </div>
 
         {/* Footer */}
         <div style={{ textAlign: "center", padding: "10px 0", color: COLORS.textLight, fontSize: 10, letterSpacing: 0.5, borderTop: `1px solid ${COLORS.border}`, flexShrink: 0, background: COLORS.card }}>
-          MFI REPORTING SUITE · POWERED BY FINERACT · © {new Date().getFullYear()}
+          FINANCIAL REPORTING SUITE · © {new Date().getFullYear()}
         </div>
       </div>
 
@@ -644,6 +644,14 @@ export function LiveDemoModal({ onClose }: { onClose: () => void }) {
         @keyframes modalIn {
           from { opacity: 0; transform: scale(0.96) translateY(12px); }
           to   { opacity: 1; transform: scale(1)    translateY(0); }
+        }
+        @media (max-width: 640px) {
+          .rg   { grid-template-columns: 1fr !important; }
+          .rg-2 { grid-template-columns: repeat(2, 1fr) !important; }
+          .demo-content { padding: 12px 10px !important; }
+          .demo-header  { padding: 10px 14px !important; }
+          .demo-tabs button { padding: 8px 10px !important; font-size: 11px !important; }
+          .demo-tabs button span { display: none; }
         }
       `}</style>
     </div>
