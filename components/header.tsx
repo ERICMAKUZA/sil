@@ -55,7 +55,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-[9999] px-4 py-4" style={{ isolation: 'isolate' }}>
       <div className="mx-auto max-w-6xl">
-        <nav className="flex items-center justify-between rounded-full border border-border bg-card/80 backdrop-blur-md px-6 py-3 shadow-sm">
+        <nav className="flex items-center justify-between rounded-full border border-border bg-card/80 backdrop-blur-md px-9 py-[18px] shadow-sm">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -63,7 +63,7 @@ export function Header() {
               alt="Synaptix Innovation Labs"
               width={279}
               height={135}
-              className="h-8 md:h-10 w-auto"
+              className="h-12 md:h-[60px] w-auto"
               priority
             />
           </Link>
