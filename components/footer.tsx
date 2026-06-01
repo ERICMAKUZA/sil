@@ -317,7 +317,7 @@ export function Footer() {
                   alt="Synaptix Innovation Labs"
                   width={279}
                   height={135}
-                  className="h-10 md:h-14 w-auto"
+                  className="h-12 md:h-[60px] w-auto"
                 />
               </Link>
               <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
