@@ -315,9 +315,9 @@ export function Footer() {
                 <Image
                   src="/images/logo-light.png"
                   alt="Synaptix Innovation Labs"
-                  width={200}
-                  height={56}
-                  className="h-12 md:h-14 w-auto"
+                  width={240}
+                  height={70}
+                  className="h-16 md:h-20 w-auto"
                 />
               </Link>
               <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
