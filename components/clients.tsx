@@ -84,13 +84,12 @@ export function Clients() {
             Our Work
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Trusted Partners
+            22+ Projects Delivered
             <br />
-            <span className="text-muted-foreground">Stories of
-              Success & Satisfaction</span>
+            <span className="text-muted-foreground">Here Are a Few We&apos;re Proud Of</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed">
-            Real projects, real impact. Explore the digital products and platforms we have built for our clients.
+            We have delivered 22+ projects across multiple industries. These are just some of the digital products and platforms we have built for our clients.
           </p>
         </div>
 

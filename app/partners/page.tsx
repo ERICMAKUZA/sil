@@ -160,20 +160,20 @@ export default function PartnersPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
-              Brands That Have
+              22+ Projects Delivered —
               <br />
-              <span className="text-accent">Trusted Us</span> to Deliver
+              <span className="text-accent">Some of Our Best</span> Work
             </h1>
 
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
-              Every partnership is a story of shared ambition. These are the businesses and organisations
+              We have delivered 22+ projects across multiple industries. These are some of the businesses and organisations
               that chose us to bring their digital vision to life — and continue to rely on us as they grow.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
-                <span className="font-bold text-foreground text-lg">8+</span>
-                <span>Partners Served</span>
+                <span className="font-bold text-foreground text-lg">22+</span>
+                <span>Projects Delivered</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
                 <span className="font-bold text-foreground text-lg">6</span>

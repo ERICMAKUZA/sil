@@ -9,9 +9,9 @@ const stats = [
     description: "Every project we deliver is built on close collaboration, transparent communication, and a commitment to exceeding expectations.",
   },
   {
-    value: "7+",
+    value: "22+",
     title: "Successful Projects",
-    description: "From web apps and LMS platforms to workflow automation and digital certification systems, we build solutions that drive real results.",
+    description: "From web apps and LMS platforms to workflow automation and digital certification systems, we have delivered 22+ projects that drive real results.",
   },
   {
     value: "3x",
