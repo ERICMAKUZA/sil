@@ -61,9 +61,9 @@ export function Header() {
             <Image
               src="/images/logo-light.png"
               alt="Synaptix Innovation Labs"
-              width={220}
-              height={60}
-              className="h-12 md:h-16 w-auto max-w-[160px] md:max-w-[220px]"
+              width={480}
+              height={140}
+              className="h-[80px] md:h-[110px] w-auto"
               priority
             />
           </Link>
