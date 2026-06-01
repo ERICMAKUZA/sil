@@ -63,7 +63,7 @@ export function Header() {
               alt="Synaptix Innovation Labs"
               width={480}
               height={140}
-              className="w-[160px] md:w-[220px] h-auto"
+              className="w-[150px] md:w-[210px] max-h-[36px] md:max-h-[40px] object-contain"
               priority
             />
           </Link>
