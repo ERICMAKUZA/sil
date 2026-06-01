@@ -52,6 +52,16 @@ const partners = [
     borderColor: "hover:border-blue-500/30",
   },
   {
+    name: "Synaptix Relay",
+    tagline: "Real-Time Communication Infrastructure",
+    description:
+      "A robust relay and communication platform built by Synaptix Innovation Labs, enabling seamless real-time data exchange and connectivity for businesses across Africa.",
+    url: "https://relay.synaptix.co.zw",
+    industry: "Technology",
+    color: "from-orange-500/10 to-amber-500/10",
+    borderColor: "hover:border-orange-500/30",
+  },
+  {
     name: "Miss Advisor",
     tagline: "Your Gateway to Global Education",
     description:
@@ -162,7 +172,7 @@ export default function PartnersPage() {
 
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
-                <span className="font-bold text-foreground text-lg">7+</span>
+                <span className="font-bold text-foreground text-lg">8+</span>
                 <span>Partners Served</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
