@@ -31,6 +31,16 @@ const partners = [
     borderColor: "hover:border-green-500/30",
   },
   {
+    name: "JBM Sports",
+    tagline: "Fuelling the Spirit of Sport in Zimbabwe",
+    description:
+      "A dynamic sports brand website for one of Zimbabwe's premier sports organisations — showcasing events, teams, merchandise, and the passion that drives the local sporting community.",
+    url: "https://www.jbmsports.co.zw",
+    industry: "Sports & Recreation",
+    color: "from-green-500/10 to-lime-500/10",
+    borderColor: "hover:border-green-500/30",
+  },
+  {
     name: "The Property Marketer",
     tagline: "Premium Real Estate & Marketing",
     description:
