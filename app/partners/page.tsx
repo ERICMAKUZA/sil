@@ -21,6 +21,26 @@ const partners = [
     borderColor: "hover:border-yellow-500/30",
   },
   {
+    name: "Vital Computers",
+    tagline: "Technology Solutions for Every Business",
+    description:
+      "A comprehensive web presence for one of Zimbabwe's trusted computer and technology retailers — showcasing hardware, software, IT support services, and business solutions for individuals and enterprises.",
+    url: "https://vitalcomputers.co.zw",
+    industry: "Technology & IT",
+    color: "from-indigo-500/10 to-blue-500/10",
+    borderColor: "hover:border-indigo-500/30",
+  },
+  {
+    name: "Santé Medical",
+    tagline: "Compassionate Care, Advanced Medicine",
+    description:
+      "A professional medical services website for a leading healthcare provider in Zimbabwe — presenting specialist consultations, medical procedures, patient resources, and clinic information with a focus on trust and accessibility.",
+    url: "https://www.santemedical.co.zw",
+    industry: "Healthcare",
+    color: "from-sky-500/10 to-teal-500/10",
+    borderColor: "hover:border-sky-500/30",
+  },
+  {
     name: "The Conservation Compass",
     tagline: "Driving Impact Through Environmental Storytelling",
     description:
