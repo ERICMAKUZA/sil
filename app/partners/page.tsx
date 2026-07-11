@@ -21,6 +21,16 @@ const partners = [
     borderColor: "hover:border-yellow-500/30",
   },
   {
+    name: "Admeliora Group",
+    tagline: "Striving Toward Better Business",
+    description:
+      "A polished corporate website for a forward-thinking business group — presenting their consultancy services, strategic offerings, and professional brand identity with a clean and authoritative digital presence.",
+    url: "https://www.admelioragroup.com",
+    industry: "Business & Consultancy",
+    color: "from-slate-500/10 to-zinc-500/10",
+    borderColor: "hover:border-slate-500/30",
+  },
+  {
     name: "Vital Computers",
     tagline: "Technology Solutions for Every Business",
     description:
