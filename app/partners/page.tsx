@@ -224,7 +224,12 @@ function BrowserFrame({ url, name, color }: { url: string; name: string; color: 
               transformOrigin: "top left",
             }}
             loading="lazy"
-            sandbox="allow-scripts allow-same-origin"
+            // Empty sandbox: these are decorative thumbnails, not live embeds.
+            // A partner site's own script (e.g. an anti-framing "break out of
+            // iframes" redirect) can otherwise navigate the whole tab away —
+            // that's what allow-scripts + allow-same-origin let through here.
+            sandbox=""
+            referrerPolicy="no-referrer"
             scrolling="no"
             tabIndex={-1}
           />
