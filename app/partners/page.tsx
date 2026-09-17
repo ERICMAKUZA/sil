@@ -22,6 +22,16 @@ const partners = [
     borderColor: "hover:border-yellow-500/30",
   },
   {
+    name: "Prime Asphalt Solutions",
+    tagline: "Bitumen Products & Road Construction",
+    description:
+      "A corporate website for Zimbabwe's trusted partner in bituminous products and road construction — covering their bitumen and primer product range, earthworks, and asphalt paving services.",
+    url: "https://www.primeasphaltsolutions.co.zw/",
+    industry: "Construction & Engineering",
+    color: "from-stone-500/10 to-neutral-500/10",
+    borderColor: "hover:border-stone-500/30",
+  },
+  {
     name: "Admeliora Group",
     tagline: "Striving Toward Better Business",
     description:
