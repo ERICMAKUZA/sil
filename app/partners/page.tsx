@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { motion } from "framer-motion"
@@ -141,8 +142,44 @@ const trustSignals = [
   },
 ]
 
+// The previews are captures of the desktop layout, scaled down to fit the card.
+// 1440x900 is 16:10, the same ratio as the frame, so a single width-based scale
+// fits both axes exactly.
+const FRAME_WIDTH = 1440
+const FRAME_HEIGHT = 900
+
 function BrowserFrame({ url, name, color }: { url: string; name: string; color: string }) {
   const displayUrl = url.replace(/^https?:\/\//, "").replace(/\/$/, "")
+  const viewportRef = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(0)
+  const [inView, setInView] = useState(false)
+
+  // Scale to the width the card actually has rather than a hard-coded factor —
+  // a fixed 0.375 assumes a 540px slot and overflows every phone-sized card.
+  useEffect(() => {
+    const el = viewportRef.current
+    if (!el) return
+
+    const observer = new ResizeObserver(([entry]) => {
+      setScale(entry.contentRect.width / FRAME_WIDTH)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  // Only keep the previews near the viewport mounted. Every frame is a full
+  // third-party site, and a phone cannot hold eleven of them at once.
+  useEffect(() => {
+    const el = viewportRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "300px 0px" },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div className="rounded-xl border border-border bg-card overflow-hidden shadow-sm">
@@ -153,28 +190,38 @@ function BrowserFrame({ url, name, color }: { url: string; name: string; color: 
           <div className="h-3 w-3 rounded-full bg-yellow-400/60" />
           <div className="h-3 w-3 rounded-full bg-green-400/60" />
         </div>
-        <div className="flex-1 mx-2">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-background/80 border border-border text-xs text-muted-foreground truncate">
+        <div className="flex-1 mx-2 min-w-0">
+          <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-background/80 border border-border text-xs text-muted-foreground">
             <Globe className="h-3 w-3 flex-shrink-0" />
             <span className="truncate">{displayUrl}</span>
           </div>
         </div>
       </div>
       {/* Iframe Container */}
-      <div className={`relative w-full aspect-[16/10] overflow-hidden bg-gradient-to-br ${color}`}>
-        <iframe
-          src={url}
-          title={`${name} website preview`}
-          className="absolute top-0 left-0 border-0 pointer-events-none"
-          style={{
-            width: "1440px",
-            height: "900px",
-            transform: "scale(0.375)",
-            transformOrigin: "top left",
-          }}
-          loading="lazy"
-          sandbox="allow-scripts allow-same-origin"
-        />
+      <div
+        ref={viewportRef}
+        className={`relative w-full aspect-[16/10] overflow-hidden bg-gradient-to-br ${color}`}
+      >
+        {inView && scale > 0 && (
+          <iframe
+            src={url}
+            title={`${name} website preview`}
+            className="absolute top-0 left-0 border-0"
+            style={{
+              width: FRAME_WIDTH,
+              height: FRAME_HEIGHT,
+              transform: `scale(${scale})`,
+              transformOrigin: "top left",
+            }}
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin"
+            scrolling="no"
+            tabIndex={-1}
+          />
+        )}
+        {/* Touch shield: pointer-events-none on the iframe is not honoured by
+            iOS Safari, which lets the frame swallow the scroll gesture. */}
+        <div className="absolute inset-0 z-10" aria-hidden="true" />
       </div>
     </div>
   )

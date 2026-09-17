@@ -29,9 +29,18 @@ export function SpiderWebCanvas() {
   const animationRef = useRef<number>(0)
   const isInitializedRef = useRef(false)
   const [opacity, setOpacity] = useState(1)
+  // Resolved after mount: reading `ontouchstart` during render makes the server
+  // and client markup disagree, and React then throws away the whole tree.
+  const [isTouch, setIsTouch] = useState(false)
+
+  useEffect(() => {
+    setIsTouch('ontouchstart' in window)
+  }, [])
 
   // Fade out as the user scrolls past the hero (first viewport height)
   useEffect(() => {
+    if (isTouch) return
+
     function handleScroll() {
       const heroHeight = window.innerHeight
       const fadeEnd = heroHeight * 0.6
@@ -40,7 +49,7 @@ export function SpiderWebCanvas() {
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isTouch])
 
   useEffect(() => {
     // Only activate on non-touch devices
@@ -199,9 +208,7 @@ export function SpiderWebCanvas() {
   }, [])
 
   // Don't render on touch devices
-  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
-    return null
-  }
+  if (isTouch) return null
 
   if (opacity === 0) return null
 
