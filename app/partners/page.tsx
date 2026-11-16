@@ -62,6 +62,26 @@ const partners = [
     borderColor: "hover:border-green-500/30",
   },
   {
+    name: "Zane Technologies",
+    tagline: "Cybersecurity & Data Protection Compliance",
+    description:
+      "A cybersecurity website for a Zimbabwean firm protecting businesses from cyber attacks — presenting penetration testing, firewalls, endpoint and email security, monitoring, training, and Cyber and Data Protection Act compliance.",
+    url: "https://zanetechnologies.co.zw/",
+    industry: "Cybersecurity",
+    color: "from-red-500/10 to-rose-500/10",
+    borderColor: "hover:border-red-500/30",
+  },
+  {
+    name: "Storage Utilities",
+    tagline: "IT Infrastructure. Sorted.",
+    description:
+      "A corporate website for a leading IT hardware supplier in Zimbabwe — showcasing enterprise servers, storage, networking, laptops, software, and printing from Dell, HP, Lenovo, Microsoft and more, backed by nationwide support.",
+    url: "https://www.storageutilities.co.zw/",
+    industry: "Technology & IT",
+    color: "from-cyan-500/10 to-blue-500/10",
+    borderColor: "hover:border-cyan-500/30",
+  },
+  {
     name: "JBM Sports",
     tagline: "Fuelling the Spirit of Sport in Zimbabwe",
     description:
